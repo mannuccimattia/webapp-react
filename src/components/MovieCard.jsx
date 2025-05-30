@@ -5,15 +5,15 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div className="col-12 col-md-6 col-lg-4">
-      <div className="card">
+      <div className="card bg-secondary">
         <div className="card-image-top">
           <img src={image} alt={title} className="rounded img-fluid" />
         </div>
-        <div className="card-body">
-          <h2 className="fw-semibold text-primary">{title}</h2>
+        <div className="card-body bg-dark text-white">
+          <h2 className="fw-semibold ">{title}</h2>
           <h5 className="fw-meidum text-secondary"><em>{year}</em></h5>
           <p>{plot}</p>
-          <Link to={`/movies/${id}`} className="btn btn-outline-primary">Find out more</Link>
+          <Link to={`/movies/${id}`} className="btn btn-outline-primary text-white">Find out more</Link>
         </div>
       </div>
     </div>
