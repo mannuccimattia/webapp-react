@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import DefaultLayout from "./layouts/DefaultLayout"
-import HomePage from "./pages/HomePage"
-import MovieDetail from "./pages/MovieDetail"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DefaultLayout from "./layouts/DefaultLayout";
+import HomePage from "./pages/HomePage";
+import MovieDetail from "./pages/MovieDetail";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
 
           <Route index element={<HomePage />} />
           <Route path="/movies/:id" element={<MovieDetail />} />
+          <Route path="*" element={<NotFoundPage />} />
+
 
         </Route>
 
@@ -22,4 +25,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
