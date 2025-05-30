@@ -162,6 +162,8 @@ const MovieDetail = () => {
       <div className="row align-items-center">
         {movie === null ? (
           <div>Loading</div>
+        ) : movie === undefined ? (
+          <div>Movie not Found</div>
         ) : (
           <>
             <div className="col-12 col-md-6 col-lg-4">
