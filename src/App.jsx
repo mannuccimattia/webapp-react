@@ -16,7 +16,6 @@ const App = () => {
           <Route path="/movies/:id" element={<MovieDetail />} />
           <Route path="*" element={<NotFoundPage />} />
 
-
         </Route>
 
       </Routes>
