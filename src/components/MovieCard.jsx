@@ -5,9 +5,9 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div className="col-12 col-md-6 col-lg-4">
-      <div className="card bg-secondary">
+      <div className="card bg-dark shadow">
         <div className="card-image-top">
-          <img src={image} alt={title} className="rounded img-fluid" />
+          <img src={image} alt={title} className="rounded-top img-fluid" />
         </div>
         <div className="card-body bg-dark text-white">
           <h2 className="fw-semibold ">{title}</h2>
