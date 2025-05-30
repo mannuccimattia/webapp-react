@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layouts/DefaultLayout"
+import HomePage from "./pages/HomePage"
+import MovieDetail from "./pages/MovieDetail"
 
 const App = () => {
   return (
@@ -9,7 +11,8 @@ const App = () => {
 
         <Route element={<DefaultLayout />}>
 
-          <Route index element={<h1>Hello react</h1>} />
+          <Route index element={<HomePage />} />
+          <Route path="/movies/:id" element={<MovieDetail />} />
 
         </Route>
 

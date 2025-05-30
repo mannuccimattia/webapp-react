@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 const DefaultLayout = () => {
   return (
     <>
-      <header>header</header>
+      <header>header from layout</header>
       <main>
         <Outlet />
       </main>
