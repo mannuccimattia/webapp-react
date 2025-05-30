@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 const NotFoundPage = () => {
   return (
-    <div>
-      <h3>Page not Found</h3>
-      <p>The page you requested does not exist</p>
+    <div className="text-center my-5">
+      <h1 className="fw-semibold">404</h1>
+      <h3 >Page not Found</h3>
+      <p className="mt-3 text-secondary fw-light">The page you requested does not exist</p>
+      <Link to="/" className="btn btn-primary mt-5">Return to homepage</Link>
     </div>
   )
 }

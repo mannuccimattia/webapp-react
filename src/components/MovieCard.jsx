@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const MovieCard = ({ movie }) => {
-  const { title, year, plot, image } = movie;
+  const { id, title, year, plot, image } = movie;
 
   return (
     <div className="col-12 col-md-6 col-lg-4">
@@ -11,6 +13,7 @@ const MovieCard = ({ movie }) => {
           <h2 className="fw-semibold text-primary">{title}</h2>
           <h5 className="fw-meidum text-secondary"><em>{year}</em></h5>
           <p>{plot}</p>
+          <Link to={`/movies/${id}`} className="btn btn-outline-primary">Find out more</Link>
         </div>
       </div>
     </div>
