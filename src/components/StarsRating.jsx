@@ -12,7 +12,7 @@ const StarsRating = ({ vote }) => {
   };
 
   return (
-    <div>
+    <div className="me-3">
       {renderStars()}
     </div>
   )

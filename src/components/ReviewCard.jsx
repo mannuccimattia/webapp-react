@@ -5,10 +5,10 @@ const ReviewCard = ({ review }) => {
 
   return (
     <div className="col-12">
-      <div className="card bg-dark text-white p-3">
+      <div className="card bg-black text-success p-3">
         <p>{`" ${text} "`}</p>
         <StarsRating vote={vote} />
-        <p>By: <em>{name}</em></p>
+        <p className="mt-3">By: <em>{name}</em></p>
       </div>
     </div>
   )

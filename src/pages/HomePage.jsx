@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="row mt-5">
+      <div className="row mt-4">
         <div className="col-12 d-flex align-items-center justify-content-between">
           <h1>Today's Movies</h1>
           <div>
@@ -28,7 +28,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="row gy-4 mt-5">
+      <div className="row gy-4 mt-3">
 
         {movies === null ? (
           <div className="col-12 text-center mt-5">
