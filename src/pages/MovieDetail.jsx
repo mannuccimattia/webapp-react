@@ -44,14 +44,14 @@ const MovieDetail = () => {
         ) : (
           <>
             <div className="col-12 col-md-6 col-lg-4 mt-5">
-              <img src={movie.image} alt="movie" className="rounded img-fluid" />
+              <img src={movie.image} alt="movie" className="rounded img-fluid" id="poster" />
             </div>
 
-            <div className="col-12 col-me-6 col-lg-8 mt-5 ps-4">
-              <h2 className="text-success">{movie.title}</h2>
+            <div className="col-12 col-me-6 col-lg-8 mt-5 ps-4 text-success">
+              <h2>{movie.title}</h2>
               <h5 className="text-secondary my-3"><em>"{movie.release_year}"</em></h5>
-              <p className="text-success opaque">{movie.genre}</p>
-              <p>{movie.abstract}</p>
+              <p className="opaque">{movie.genre}</p>
+              <p className="text-light">{movie.abstract}</p>
             </div>
 
             <div className="col-12 mt-5 px-3 d-flex justify-content-between align-items-center text-success">

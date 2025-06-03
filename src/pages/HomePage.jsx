@@ -21,7 +21,7 @@ const HomePage = () => {
     <>
       <div className="row mt-4">
         <div className="col-12 d-flex align-items-center justify-content-between">
-          <h1>Today's Movies</h1>
+          <h1 className="text-success">Today's Movies</h1>
           <div>
             <img src="../src/assets/imgs/bg_parrot.png" alt="parrot" id="title-image" />
           </div>
