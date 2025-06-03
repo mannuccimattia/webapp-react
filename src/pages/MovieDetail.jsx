@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import ReviewCard from "../components/ReviewCard";
+import StarsRating from "../components/StarsRating";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -47,6 +48,10 @@ const MovieDetail = () => {
 
             <div className="col-12 mt-5">
               <h3>Users reviews</h3>
+              <div className="avg-vote d-flex">
+                <div>Average</div>
+                <StarsRating vote={movie.average_vote} />
+              </div>
             </div>
 
             <div className="row gy-3">
