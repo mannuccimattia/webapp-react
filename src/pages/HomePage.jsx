@@ -19,8 +19,15 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>BoolFlix</h1>
-      <hr />
+      <div className="row mt-5">
+        <div className="col-12 d-flex align-items-center justify-content-between">
+          <h1>Today's Movies</h1>
+          <div>
+            <img src="../src/assets/imgs/bg_parrot.png" alt="parrot" id="title-image" />
+          </div>
+        </div>
+      </div>
+
       <div className="row gy-4 mt-5">
 
         {movies === null ? (

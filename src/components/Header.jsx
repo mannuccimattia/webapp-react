@@ -7,7 +7,7 @@ const Header = () => {
         <Link className="navbar-brand text-white" to="/">
           <div className="d-flex align-items-center">
             <img src="../src/assets/imgs/logo.png" alt="logo" id="header-logo" />
-            <div>BoolFlix</div>
+            <div>CarribeFlix</div>
           </div>
         </Link>
       </div>
