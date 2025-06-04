@@ -1,4 +1,29 @@
-const ReviewForm = () => {
+import axios from "axios";
+import { useState } from "react";
+
+const ReviewForm = ({ book_id, reloadReviews }) => {
+
+  const initialData = { name: "", vote: "", text: "" };
+
+  const [formData, setFormData] = useState(initialData);
+
+  const setFieldValue = (e) => {
+    const { value, name } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post(`http://127.0.0.1:3000/api/movies/${book_id}/review`, formData, {
+      headers: { "Content-Type": "application/json" }
+    }).then(() => {
+      setFormData(initialData);
+      reloadReviews();
+    })
+  }
+
   return (
     <div className='col-12'>
       <div className="card">
@@ -8,7 +33,7 @@ const ReviewForm = () => {
         </div>
 
         <div className="card-body">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-12">
                 <label htmlFor="name" className='control-label'>Name</label>
@@ -18,6 +43,8 @@ const ReviewForm = () => {
                   placeholder='Name'
                   name='name'
                   id='name'
+                  value={formData.name}
+                  onChange={setFieldValue}
                   required
                 />
               </div>
@@ -32,6 +59,8 @@ const ReviewForm = () => {
                   placeholder='Vote'
                   name='vote'
                   id='vote'
+                  value={formData.vote}
+                  onChange={setFieldValue}
                   required
                 />
               </div>
@@ -44,6 +73,8 @@ const ReviewForm = () => {
                   placeholder="Write something"
                   name='text'
                   id='text'
+                  value={formData.text}
+                  onChange={setFieldValue}
                   required
                 ></textarea>
               </div>

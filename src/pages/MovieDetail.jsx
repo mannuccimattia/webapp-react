@@ -68,7 +68,7 @@ const MovieDetail = () => {
                 <ReviewCard key={`review-${review.id}`} review={review} />
               ))}
 
-              <ReviewForm />
+              <ReviewForm book_id={id} reloadReviews={fetchMovie} />
             </div>
           </>
         )}
