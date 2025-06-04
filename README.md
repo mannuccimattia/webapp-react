@@ -1,4 +1,4 @@
-### ESERCIZIO: Setup Web App React
+### ESERCIZIO: Setup Web App React (Parte 1)
 
 repo: `webapp-react`
 
@@ -29,3 +29,44 @@ Fate tutto statico.
 #### SUPER BONUS
 
 - Nella pagina di dettaglio del film copiate l'array dei film aggiungendo a ciascun oggetto un'array di recensioni. Trovate l'elemento all'interno dell'array da mostrare nella pagina attraverso l'id che avete passato come parametro e mostratelo in pagina assieme alle sue recensioni
+
+---
+
+### ESERCIZIO: Setup Web App React (Parte 2)
+
+repo: `webapp-react` e `webapp-express`
+
+#### MILESTONE 1
+
+- Configuriamo l’app di backend (repo webapp-express) a ricevere chiamate dalla nostra applicazione React, installando e impostando il middleware CORS (npm i cors)
+- Installate axios nell'app frontend e provate quindi ad effettuare una chiamata Ajax dalla home del progetto React, per ottenere la lista dei libri
+
+#### MILESTONE 2
+
+- In ultimo, effettuiamo una chiamata AJAX dalla pagina di dettaglio per ottenere il dettaglio di un singolo film, comprese le sue recensioni
+
+#### Bonus
+
+- Realizzare una componente StarsRating in cui mostrare il voto delle recensioni (magari anche il voto medio, chissà....)
+- Curare l’aspetto estetico della vostra applicazione
+
+---
+
+### ESERCIZIO: Setup Web App React (Parte 3)
+
+repo: `webapp-react`
+
+#### Esercizio
+
+Miglioriamo l’esperienza dell’utente inserendo
+
+- ##### MILESTONE 1 (BACKEND)
+
+  - Predisponiamo un’API per salvare nel database una nuova recensione legata ad un film
+  - Testiamola su postman e verifichiamo che nel DB venga effettivamente inserita una nuova recensione
+
+- ##### MILESTONE 2 (FRONTEND)
+
+  - Creiamo un componente che contenga il form per le recensioni
+  - Inseriamo questo componente nella pagina di dettaglio del film
+  - All’invio del form, la nuova recensione viene salvata sul database e visualizzata nella pagina, in fondo alle altre
