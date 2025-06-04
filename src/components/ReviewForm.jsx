@@ -26,17 +26,17 @@ const ReviewForm = ({ book_id, reloadReviews }) => {
 
   return (
     <div className='col-12'>
-      <div className="card">
+      <div className="card bg-black text-success p-3">
 
-        <div className="card-header">
+        <div className="card-header bg-black">
           <h3>Leave a review</h3>
         </div>
 
         <div className="card-body">
           <form onSubmit={handleSubmit}>
-            <div className="row">
+            <div className="row gy-3">
               <div className="col-12">
-                <label htmlFor="name" className='control-label'>Name</label>
+                <label htmlFor="name" className='control-label opaque-mid mb-1'>Name</label>
                 <input
                   type="text"
                   className='form-control'
@@ -50,7 +50,7 @@ const ReviewForm = ({ book_id, reloadReviews }) => {
               </div>
 
               <div className="col-12">
-                <label htmlFor="vote" className='control-label'>Vote</label>
+                <label htmlFor="vote" className='control-label opaque-mid mb-1'>Vote</label>
                 <input
                   type="number"
                   min="0"
@@ -66,7 +66,7 @@ const ReviewForm = ({ book_id, reloadReviews }) => {
               </div>
 
               <div className="col-12">
-                <label htmlFor="text" className='control-label'>Text</label>
+                <label htmlFor="text" className='control-label opaque-mid mb-1'>Text</label>
                 <textarea
                   type="text"
                   className='form-control'
@@ -79,7 +79,7 @@ const ReviewForm = ({ book_id, reloadReviews }) => {
                 ></textarea>
               </div>
 
-              <div className="col-12">
+              <div className="col-12 mt-4">
                 <button
                   className='btn btn-outline-success'>Submit</button>
               </div>
