@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import ReviewCard from "../components/ReviewCard";
 import StarsRating from "../components/StarsRating";
+import ReviewForm from "../components/ReviewForm";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -66,6 +67,8 @@ const MovieDetail = () => {
               {movie.reviews.map(review => (
                 <ReviewCard key={`review-${review.id}`} review={review} />
               ))}
+
+              <ReviewForm />
             </div>
           </>
         )}

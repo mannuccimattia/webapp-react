@@ -54,7 +54,7 @@ repo: `webapp-react` e `webapp-express`
 
 ### ESERCIZIO: Setup Web App React (Parte 3)
 
-repo: `webapp-react`
+repo: `webapp-react` e `webapp-express`
 
 #### Esercizio
 
