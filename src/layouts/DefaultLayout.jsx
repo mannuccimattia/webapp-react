@@ -8,7 +8,7 @@ const DefaultLayout = () => {
         <Header />
       </header>
 
-      <main className="container">
+      <main className="container mb-4">
         <Outlet />
       </main>
     </>
