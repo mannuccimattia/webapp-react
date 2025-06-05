@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import MovieCard from "../components/MovieCard";
+import Loader from "../components/Loader";
 
 const HomePage = () => {
 
@@ -31,9 +32,7 @@ const HomePage = () => {
       <div className="row gy-4 mt-3">
 
         {movies === null ? (
-          <div className="col-12 text-center mt-5">
-            <span className="loader"></span>
-          </div>
+          <Loader />
         ) : (
           <>
             {movies.map(movie => (

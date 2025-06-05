@@ -69,11 +69,11 @@ textarea::placeholder {
 }
 
 
-/* LOADING ANIMATION */
+/* LOADER */
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
+  width: 248px;
+  height: 248px;
+  border: 5px solid #198754;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
