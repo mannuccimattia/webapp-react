@@ -1,26 +1,36 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import MovieDetail from "./pages/MovieDetail";
 import NotFoundPage from "./pages/NotFoundPage";
+import GeneralContext from "./contexts/generalContext";
 
 const App = () => {
+
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
-    <BrowserRouter>
+    <GeneralContext.Provider value={{ isLoading, setIsLoading }}>
 
-      <Routes>
+      <BrowserRouter>
 
-        <Route element={<DefaultLayout />}>
+        <Routes>
 
-          <Route index element={<HomePage />} />
-          <Route path="/movies/:id" element={<MovieDetail />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route element={<DefaultLayout />}>
 
-        </Route>
+            <Route index element={<HomePage />} />
+            <Route path="/movies/:id" element={<MovieDetail />} />
+            <Route path="*" element={<NotFoundPage />} />
 
-      </Routes>
+          </Route>
 
-    </BrowserRouter>
+        </Routes>
+
+      </BrowserRouter>
+
+    </GeneralContext.Provider>
+
   )
 }
 

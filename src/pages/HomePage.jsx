@@ -1,16 +1,22 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
 import MovieCard from "../components/MovieCard";
-import Loader from "../components/Loader";
+import GeneralContext from "../contexts/generalContext";
 
 const HomePage = () => {
 
   const [movies, setMovies] = useState(null);
 
+  const { setIsLoading } = useContext(GeneralContext);
+
   const fetchMovies = () => {
+    setIsLoading(true);
+
     axios.get("http://127.0.0.1:3000/api/movies").then(resp => {
-      setMovies(resp.data);
+      setTimeout(() => {
+        setMovies(resp.data);
+        setIsLoading(false);
+      }, 1000);
     }).catch(err => console.log(err));
   };
 
@@ -32,7 +38,9 @@ const HomePage = () => {
       <div className="row gy-4 mt-3">
 
         {movies === null ? (
-          <Loader />
+          <div className="col-12 text-center mt-5 text-secondary">
+            Loading
+          </div>
         ) : (
           <>
             {movies.map(movie => (

@@ -1,23 +1,32 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
 import ReviewCard from "../components/ReviewCard";
 import StarsRating from "../components/StarsRating";
 import ReviewForm from "../components/ReviewForm";
+import GeneralContext from "../contexts/generalContext";
 
 const MovieDetail = () => {
   const { id } = useParams();
 
+  const { setIsLoading } = useContext(GeneralContext);
+
   const [movie, setMovie] = useState(null);
 
   const fetchMovie = () => {
+    setIsLoading(true);
+
     axios.get(`http://127.0.0.1:3000/api/movies/${id}`).then(resp => {
-      setMovie(resp.data);
+      setTimeout(() => {
+        setMovie(resp.data);
+        setIsLoading(false);
+      }, 1000);
     }).catch(err => {
       if (err.response && err.response.status === 404) {
         setMovie(undefined);
-      } else {
+      }
+      else {
         console.error(err);
       }
     });
@@ -31,8 +40,8 @@ const MovieDetail = () => {
     <>
       <div className="row">
         {movie === null ? (
-          <div className="col-12 text-center mt-5">
-            <span className="loader"></span>
+          <div className="col-12 text-center mt-5 text-secondary">
+            Loading
           </div>
         ) : movie === undefined ? (
           <div className="row mt-5">
