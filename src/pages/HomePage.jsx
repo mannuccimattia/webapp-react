@@ -5,14 +5,33 @@ import GeneralContext from "../contexts/generalContext";
 
 const HomePage = () => {
 
+  // state variables
   const [movies, setMovies] = useState(null);
-
   const { setIsLoading } = useContext(GeneralContext);
+  const [search, setSearch] = useState("");
 
+  // function for searching movie from searchbar
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  // function for submitting search
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    fetchMovies();
+  };
+
+  // function for fetching movies from db
   const fetchMovies = () => {
     setIsLoading(true);
 
-    axios.get("http://127.0.0.1:3000/api/movies").then(resp => {
+    const url = (
+      !search
+        ? "http://127.0.0.1:3000/api/movies"
+        : "http://127.0.0.1:3000/api/movies?search=" + search
+    );
+
+    axios.get(url).then(resp => {
       setTimeout(() => {
         setMovies(resp.data);
         setIsLoading(false);
@@ -20,6 +39,7 @@ const HomePage = () => {
     }).catch(err => console.log(err));
   };
 
+  // effect for calling fetchMovies on mount
   useEffect(() => {
     fetchMovies();
   }, []);
@@ -35,7 +55,21 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="row gy-4 mt-3">
+      <div className="row gy-4 my-3">
+        <div className="col-12">
+          <form id="search" onSubmit={handleSearchSubmit}>
+            <div className="form-group d-flex">
+              <input
+                type="text"
+                className="form-control border border-2 border-success rounded-0 rounded-start"
+                placeholder="Search by Title"
+                value={search}
+                onChange={handleSearch}
+              />
+              <button className="btn btn-success rounded-0 rounded-end" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
 
         {movies === null ? (
           <div className="col-12 text-center mt-5 text-secondary">

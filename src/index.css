@@ -68,6 +68,12 @@ textarea::placeholder {
   color: gray !important;
 }
 
+#search {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
 
 /* LOADER */
 .loader {
